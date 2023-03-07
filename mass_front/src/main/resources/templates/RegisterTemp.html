@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+<form class="form-horizontal" th:action="@{/customer/add}" th:object="${customer}" method="post">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Form Name</legend>
+
+        <!-- Text input-->
+        <input type="hidden" th:field="*{cus_id}" />
+        <div class="form-group">
+            <label class="col-md-4 control-label" >Name</label>
+            <div class="col-md-4">
+                <input  name="username" type="text" th:field="*{cus_name}" class="form-control input-md">
+                <span class="help-block">help</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" >User Name</label>
+            <div class="col-md-4">
+                <input   type="text" th:field="*{username}" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" >Password </label>
+            <div class="col-md-4">
+                <input  type="password" th:field="*{password}" class="form-control input-md">
+                <span class="help-block">help</span>
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label"> Address</label>
+            <div class="col-md-4">
+                <textarea class="form-control" th:field="*{cus_address}" name="textarea">default text</textarea>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" >Email</label>
+            <div class="col-md-4">
+                <input   type="email" th:field="*{cus_email}" class="form-control input-md">
+                <span class="help-block">help</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" >Branch</label>
+            <div class="col-md-4">
+                <input   type="text" th:field="*{cus_city}" class="form-control input-md">
+                <span class="help-block">help</span>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" >Number</label>
+            <div class="col-md-4">
+                <input  type="text" th:field="*{cus_number}" class="form-control input-md">
+                <span class="help-block">help</span>
+            </div>
+        </div>
+
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton">Register</label>
+            <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</body>
+</html>
